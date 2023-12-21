@@ -1,18 +1,30 @@
 <?php
 
-class TodoManager {
+class Database {
     private $conn;
 
     public function __construct($conn) {
         $this->conn = $conn;
     }
 
-    public function deleteTodo($id) {
+    public function getConn() {
+        return $this->conn;
+    }
+}
+
+class PengelolaTodo {
+    private $db;
+
+    public function __construct(Database $db) {
+        $this->db = $db;
+    }
+
+    public function hapusTodo($id) {
         if (empty($id)) {
             return 0;
         }
 
-        $stmt = $this->conn->prepare("DELETE FROM todos WHERE id=?");
+        $stmt = $this->db->getConn()->prepare("DELETE FROM todos WHERE id=?");
         $res = $stmt->execute([$id]);
 
         if ($res) {
@@ -28,10 +40,12 @@ if (isset($_POST['id'])) {
 
     $id = $_POST['id'];
 
-    $todoManager = new TodoManager($conn);
-    $result = $todoManager->deleteTodo($id);
+    $database = new Database($conn);
+    $pengelolaTodo = new PengelolaTodo($database);
+    $hasil = $pengelolaTodo->hapusTodo($id);
 
-    echo $result;
+    echo $hasil;
 } else {
     header("Location: ../index.php?mess=error");
 }
+
