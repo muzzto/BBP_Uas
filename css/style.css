@@ -1,6 +1,38 @@
 body {
-  background: #d1d9e6; /* Ganti warna latar belakang */
-  font-family: 'Arial', sans-serif; /* Ganti jenis font */
+  background: #d1d9e6;
+  font-family: 'Arial', sans-serif;
+}
+
+h1.catatan {
+  text-align: center;
+  font-size: 28px;
+  color: #4682b4;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+  border-bottom: 2px solid #4682b4; /* Tambahkan border bawah */
+  padding-bottom: 5px; /* Beri padding pada bagian bawah */
+}
+
+h1.catatan:before,
+h1.catatan:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  background: #4682b4;
+}
+
+h1.catatan:before {
+  left: -60px;
+}
+
+h1.catatan:after {
+  right: -60px;
 }
 
 * {
@@ -10,18 +42,18 @@ body {
 }
 
 .main-section {
-  background: #ffffff; /* Ganti warna latar utama */
-  max-width: 800px; /* Sesuaikan lebar maksimum */
-  width: 70%; /* Sesuaikan lebar */
+  background: #ffffff;
+  max-width: 800px;
+  width: 70%;
   height: 500px;
   margin: 30px auto;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  display: flex; /* Tambahkan display flex untuk menata input dan output */
+  display: flex;
 }
 
 .add-section {
-  width: 50%; /* Bagian kiri untuk input */
+  width: 50%;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -29,10 +61,10 @@ body {
 
 .add-section input {
   display: block;
-  width: 100%; /* Lebar input 100% */
+  width: 100%;
   height: 70px;
-  margin: 10px 0; /* Sesuaikan margin */
-  border: 2px solid #4682b4; /* Ganti warna border */
+  margin: 10px 0;
+  border: 2px solid #4682b4;
   font-size: 16px;
   border-radius: 5px;
   padding: 0 5px;
@@ -45,14 +77,14 @@ body {
 
 .add-section button {
   display: block;
-  width: 100%; /* Lebar tombol 100% */
+  width: 100%;
   height: 40px;
-  margin: 10px 0; /* Sesuaikan margin */
+  margin: 10px 0;
   border: none;
   outline: none;
-  background: #0066cc; /* Ganti warna tombol */
+  background: #0066cc;
   color: #fff;
-  font-family: 'Arial', sans-serif; /* Ganti jenis font */
+  font-family: 'Arial', sans-serif;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -60,7 +92,7 @@ body {
 }
 
 .add-section button:hover {
-  background: #004080; /* Ubah warna tombol saat dihover */
+  background: #004080;
 }
 
 .add-section button span {
@@ -72,12 +104,12 @@ body {
 }
 
 .show-todo-section {
-  width: 50%; /* Bagian kanan untuk menampilkan output */
-  background: #f0f0f0; /* Ganti warna latar output */
-  margin: 30px 0; /* Sesuaikan margin */
+  width: 50%;
+  background: #f0f0f0;
+  margin: 30px 0;
   padding: 10px;
   border-radius: 5px;
-  overflow-y: auto; /* Tambahkan overflow-y agar dapat di-scroll jika kontennya lebih panjang */
+  overflow-y: auto;
 }
 
 .todo-item {
@@ -97,14 +129,14 @@ body {
   display: inline-block;
   padding: 5px 0px;
   font-size: 17px;
-  color: #004080; /* Ganti warna teks */
+  color: #004080;
 }
 
 .todo-item small {
   display: block;
   width: 100%;
   padding: 5px 0px;
-  color: #777; /* Ganti warna teks kecil */
+  color: #777;
   padding-left: 30px;
   font-size: 14px;
 }
@@ -114,8 +146,8 @@ body {
   float: right;
   width: 20px;
   height: 20px;
-  font-family: 'Arial', sans-serif; /* Ganti jenis font */
-  color: #cc6666; /* Ganti warna teks */
+  font-family: 'Arial', sans-serif;
+  color: #cc6666;
   text-decoration: none;
   text-align: right;
   padding: 0px 5px 8px 0px;
@@ -141,5 +173,6 @@ body {
 .empty {
   font-size: 16px;
   text-align: center;
-  color: #777; /* Ganti warna teks */
+  color: #777;
 }
+
